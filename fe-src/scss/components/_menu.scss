@@ -1,0 +1,151 @@
+@mixin mixinMenu($mediaQuerie: 'mobile') {
+	.drc-menu {
+		@if($mediaQuerie == 'mobile'){
+			position: fixed;
+			width: 100%;
+			background-color: rgba($color: #000000, $alpha: 0.2);
+			z-index: 10;
+
+			.wrapper {
+				display: flex;
+				justify-content: space-between;
+				padding: 1.5rem 0;
+				flex-flow: column;
+
+				#menuToggler {
+					display: none;
+
+					&:checked {
+						~.links {
+							display: flex;
+						}
+
+						~.menu {
+							.hamburguer {
+								label {
+									mask: url('/images/system/close-circle-outline.svg') no-repeat;
+									-webkit-mask: url('/images/system/close-circle-outline.svg') no-repeat;
+								}
+							}
+						}
+					}
+				}
+
+				.menu {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					width: 90vw;
+					margin: 0 auto;
+					
+					.company {
+						display: flex;
+						align-items: center;
+						gap: 1rem;
+	
+						.logo {
+							width: 3rem;
+	
+							img {
+								width: 100%;
+							}
+						}
+
+						.title {
+							font-weight: bold;
+						}
+					}
+
+					.hamburguer {
+						width: 2rem;
+						height: 2rem;
+						
+						label {
+							display: block;
+							aspect-ratio: 1/1;
+							background-color: var(--colorMainText);
+							mask: url('/images/system/menu-outline.svg') no-repeat;
+							-webkit-mask: url('/images/system/menu-outline.svg') no-repeat;
+							cursor: pointer;
+						}
+					}
+				}
+
+				.links {
+					display: none;
+					flex-flow: column;
+					padding: 1rem;
+					background-color: rgba($color: #000000, $alpha: 0.7);
+
+					a {
+						color: var(--colorMainText);
+						text-decoration: none;
+						font-weight: bold;
+						padding: 1rem 0;
+						
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+
+		@if($mediaQuerie == 'tablet'){
+		}
+
+		@if($mediaQuerie == 'desktop'){
+			position: fixed;
+			width: 100%;
+			background-color: rgba($color: #000000, $alpha: 0.2);
+
+			.wrapper {
+				width: 90vw;
+				margin: 0 auto;
+				align-items: center;
+				flex-flow: row;
+
+				.menu {
+					display: flex;
+					align-items: center;
+					
+					.company {
+						display: flex;
+						align-items: center;
+						gap: 2rem;
+	
+						.logo {
+							width: 3rem;
+	
+							img {
+								width: 100%;
+							}
+						}
+
+						.title {
+							font-weight: bold;
+						}
+					}
+
+					.hamburguer {
+						display: none;
+					}
+				}
+
+				.links {
+					display: flex;
+					align-items: center;
+					gap: 2rem;
+					flex-flow: row;
+					background-color: transparent;
+					padding: 0;
+
+					a {
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+}

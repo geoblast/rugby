@@ -1,0 +1,44 @@
+@import "variables/vars";
+@import "components/viewport";
+@import "components/menu";
+@import "components/hero";
+@import "components/results";
+@import "components/classification";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap');
+
+
+html {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
+	font-size: 16px;
+}
+
+body {
+	@include mixinBody();
+	@include mixinMenu();
+	@include mixinHero();
+	@include mixinResults();
+	@include mixinClassification();
+	
+}
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+	body {
+		@include mixinBody('desktop');
+		@include mixinMenu('desktop');
+		@include mixinHero('desktop');
+		@include mixinResults('desktop');
+		@include mixinClassification('desktop');
+	}
+}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}

@@ -1,0 +1,6 @@
+-- SCSS compiler script
+-- Utiliza a app sass de node.js para compilar o scss para css, permitindo o uso de variáveis e funções, permitindo a reatuilização de código
+-- os seguintes comando colocam o dev na pasta do scss e arrancam o compilador, que converte o drc.scc e os imports que lá existem para o ficheiro de css drc.min.css
+
+cd D:\wsafphp\rugby-douro\fe-src\scss
+sass --no-source-map --watch --style=compressed drc.scss:../../css/drc.min.css

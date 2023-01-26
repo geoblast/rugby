@@ -1,0 +1,77 @@
+@mixin mixinResults($mediaQuerie: 'mobile') {
+	.drc-results-table {
+		@if($mediaQuerie == 'mobile'){
+			margin-top: var(--sectionMargin);
+			margin-bottom: var(--sectionMargin);
+
+			.wrapper {
+				width: 95vw;
+				margin: 0 auto;
+				border-radius: 1rem;
+				padding: 2rem 0;
+				background: linear-gradient(110deg, var(--colorHome) 50%, var(--colorVisitor) 50%);
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				position: relative;
+
+				.team {
+					width: 45%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-flow: column;
+
+					.logo {
+						width: 30%;
+						margin-bottom: 1rem;
+
+						img {
+							width: 100%;
+						}
+					}
+
+					.name {
+						font-weight: bold;
+						text-align: center;
+						font-size: 0.8rem;
+					}
+				}
+
+				.result-wrapper {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					.result {
+						font-weight: bold;
+						font-size: 1.5rem;
+					}
+				}
+			}
+		}
+
+		@if($mediaQuerie == 'desktop'){
+			.wrapper {
+				width: 60vw;
+
+				.team {
+					.name {
+						font-size: 1rem;
+					}
+				}
+
+				.result-wrapper {
+					.result {
+						font-size: 3rem;
+					}
+				}
+			}
+		}
+	}
+}
